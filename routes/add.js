@@ -25,7 +25,7 @@ router.post('/', (req, res, next) => {
     flavors: req.body.flavors,
     lastTappedOn: req.body.lastTappedOn,
     breweryId: req.body.breweryId,
-    breweryName: req.body.breweryName,
+    breweryName: req.session.breweryList[req.body.breweryId],
   };
   beerModel.create(beer, (err, message) => {
     req.session.message = message;
