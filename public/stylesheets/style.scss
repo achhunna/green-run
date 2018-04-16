@@ -1,11 +1,15 @@
 /* THESE ARE MAPPED SEE: ./style.css.map */
 $light-grey: #aaa;
 $super-light-grey: #eee;
+$stout: #393939;
+$foam: #fff5ee;
+$white: #fff;
 $break-small: 991px;
 
 body {
-  padding: 50px;
+  padding: 0px !important;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: $foam !important;
 
   @media screen and (max-width: $break-small) {
     padding: 15px;
@@ -17,8 +21,14 @@ a {
 }
 
 .nav-header {
-  font-weight: bold;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
+  background-color: $stout;
+  padding: 20px;
+
+   h1 {
+     font-weight: bold;
+     color: $super-light-grey;
+   }
 }
 
 .main-container,
@@ -26,6 +36,8 @@ a {
   max-width: 700px;
   margin: auto;
   padding: 50px;
+  background-color: $white;
+  margin-bottom: 50px;
 
   @media screen and (max-width: $break-small) {
     padding: 20px;
@@ -49,6 +61,17 @@ a {
 
 .beer-form {
   border: 2px solid $super-light-grey;
+
+  .form-header {
+    margin-bottom: 40px;
+    text-align: center;
+    color: $light-grey;
+  }
+
+  .buttons-container {
+    margin-top: 40px;
+    text-align: center;
+  }
 }
 
 .beer-list {
@@ -58,25 +81,29 @@ a {
 .beer-container {
   border: 1px solid $light-grey;
   padding: 10px;
-  display: flex;
-  justify-content: space-between;
 
-  .name {
-    font-weight: bold;
-    font-size: 20px;
-  }
+  .beer-details {
+    display: flex;
+    justify-content: space-between;
 
-  .info {
-    font-size: 12px;
+    .name {
+      font-weight: bold;
+      font-size: 20px;
+      color: $stout;
+    }
 
-    &.right {
-      text-align: right;
+    .info {
+      font-size: 12px;
+      color: $light-grey;
+
+      &.right {
+        text-align: right;
+      }
     }
   }
-}
 
-.form-header {
-  margin-bottom: 40px;
-  text-align: center;
-  color: $light-grey;
+  .buttons-container {
+    margin-top: 10px;
+    text-align: right;
+  }
 }

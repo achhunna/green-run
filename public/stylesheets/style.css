@@ -1,7 +1,8 @@
 /* THESE ARE MAPPED SEE: ./style.css.map */
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+  padding: 0px !important;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #fff5ee !important; }
   @media screen and (max-width: 991px) {
     body {
       padding: 15px; } }
@@ -10,14 +11,20 @@ a {
   color: #00B7FF; }
 
 .nav-header {
-  font-weight: bold;
-  margin-bottom: 50px; }
+  margin-bottom: 40px;
+  background-color: #393939;
+  padding: 20px; }
+  .nav-header h1 {
+    font-weight: bold;
+    color: #eee; }
 
 .main-container,
 .beer-form {
   max-width: 700px;
   margin: auto;
-  padding: 50px; }
+  padding: 50px;
+  background-color: #fff;
+  margin-bottom: 50px; }
   @media screen and (max-width: 991px) {
     .main-container,
     .beer-form {
@@ -39,26 +46,34 @@ a {
 
 .beer-form {
   border: 2px solid #eee; }
+  .beer-form .form-header {
+    margin-bottom: 40px;
+    text-align: center;
+    color: #aaa; }
+  .beer-form .buttons-container {
+    margin-top: 40px;
+    text-align: center; }
 
 .beer-list {
   margin-top: 20px; }
 
 .beer-container {
   border: 1px solid #aaa;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between; }
-  .beer-container .name {
-    font-weight: bold;
-    font-size: 20px; }
-  .beer-container .info {
-    font-size: 12px; }
-    .beer-container .info.right {
-      text-align: right; }
-
-.form-header {
-  margin-bottom: 40px;
-  text-align: center;
-  color: #aaa; }
+  padding: 10px; }
+  .beer-container .beer-details {
+    display: flex;
+    justify-content: space-between; }
+    .beer-container .beer-details .name {
+      font-weight: bold;
+      font-size: 20px;
+      color: #393939; }
+    .beer-container .beer-details .info {
+      font-size: 12px;
+      color: #aaa; }
+      .beer-container .beer-details .info.right {
+        text-align: right; }
+  .beer-container .buttons-container {
+    margin-top: 10px;
+    text-align: right; }
 
 /*# sourceMappingURL=style.css.map */
