@@ -24,13 +24,18 @@
           <% JSON.parse(beers).value.map((beer) => { %>
             <div class="beer-container">
               <div class="beer-details">
-                <div>
+                <div class="flex-item">
+                  <div class="image-container">
+                    <i class="fas fa-beer"></i>
+                  </div>
+                </div>
+                <div class="flex-item center">
                   <div class="name"><%= beer.name %></div>
                   <div class="breweryName"><%= beer.breweryName %></div>
                   <div class="info flavors">Flavors: <%= beer.flavors %></div>
                   <div class="info lastTappedOn">Last tapped on <%= beer.lastTappedOn %></div>
                 </div>
-                <div class="info right">
+                <div class="flex-item info right">
                   <div class="ibu">IBU <%= beer.ibu %></div>
                   <div class="abv">ABV <%= beer.abv %></div>
                 </div>

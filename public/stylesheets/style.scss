@@ -1,6 +1,6 @@
 /* THESE ARE MAPPED SEE: ./style.css.map */
 $light-grey: #aaa;
-$super-light-grey: #eee;
+$super-light-grey: #ddd;
 $stout: #393939;
 $foam: #fff5ee;
 $white: #fff;
@@ -85,6 +85,33 @@ a {
   .beer-details {
     display: flex;
     justify-content: space-between;
+    flex-basis: 0;
+    flex-grow: 1;
+
+    .flex-item {
+      flex: 1;
+      margin-right: 10px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .center {
+      flex: 2;      
+    }
+
+    .image-container {
+      width: 100px;
+      height: 100px;
+      border: 1px solid $super-light-grey;
+      margin: 10px;
+      font-size: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $super-light-grey;
+    }
 
     .name {
       font-weight: bold;
