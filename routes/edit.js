@@ -4,8 +4,6 @@ const router = express.Router();
 
 const beerModel = require('../models');
 
-const moment = require('moment');
-
 router.get('/:id', (req, res, next) => {
   const breweryList = req.session.breweryList ? req.session.breweryList : null;
   beerModel.get(parseInt(req.params.id), (err, beer) => {
@@ -13,7 +11,6 @@ router.get('/:id', (req, res, next) => {
       title: 'Brewtopia 🍺',
       subTitle: 'Edit Beer',
       beer,
-      moment,
       breweryList,
     });
   });
@@ -21,17 +18,17 @@ router.get('/:id', (req, res, next) => {
 
 router.post('/', (req, res, next) => {
   const beer = {
-    id: req.body.id,
+    id: parseInt(req.body.id),
     name: req.body.name,
     activelyBrewed: req.body.activelyBrewed,
-    ibu: req.body.ibu,
-    abv: req.body.abv,
+    ibu: parseInt(req.body.ibu),
+    abv: Number(req.body.abv),
     flavors: req.body.flavors,
     lastTappedOn: req.body.lastTappedOn,
     breweryId: req.body.breweryId,
     breweryName: req.session.breweryList[req.body.breweryId],
   };
-  beerModel.edit(beer, (err, message) => {
+  beerModel.edit(parseInt(req.body.id), beer, (err, message) => {
     req.session.message = message;
     res.redirect('/');
   });

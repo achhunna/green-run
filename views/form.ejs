@@ -9,7 +9,7 @@
       <div class="beer-form">
         <h4 class="form-header"><%= subTitle %></h4>
         <% const singleBeer = typeof beer != 'undefined' ? JSON.parse(beer) : null %>
-        <form method="POST" action="/add">
+        <form method="POST" action="<%= singleBeer ? '/edit' : '/add' %>">
           <input type="hidden" name="id" value="<%= singleBeer ? singleBeer.id : lastId %>">
           <div class="form-group row">
             <label class="col-2 col-form-label">Name</label>
@@ -50,7 +50,7 @@
           <div class="form-group row">
             <label class="col-4 col-form-label">Last Tapped On</label>
             <div class="col-8">
-              <input class="form-control" type="date" placeholder="Last Tapped Date" id="lastTappedOn" name="lastTappedOn" value="<%= singleBeer ? moment(singleBeer.lastTappedOn).format('YYYY-MM-DD') : '' %>">
+              <input class="form-control" type="text" placeholder="Last Tapped Date" id="lastTappedOn" name="lastTappedOn" value="<%= singleBeer ? singleBeer.lastTappedOn : '' %>">
             </div>
           </div>
 

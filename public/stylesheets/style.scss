@@ -97,8 +97,14 @@ a {
       }
     }
 
+    .left {
+      @media screen and (max-width: $break-small) {
+        display: none;
+      }
+    }
+
     .center {
-      flex: 2;      
+      flex: 2;
     }
 
     .image-container {

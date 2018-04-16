@@ -70,6 +70,9 @@ a {
       margin-right: 10px; }
       .beer-container .beer-details .flex-item:last-child {
         margin-right: 0; }
+    @media screen and (max-width: 991px) {
+      .beer-container .beer-details .left {
+        display: none; } }
     .beer-container .beer-details .center {
       flex: 2; }
     .beer-container .beer-details .image-container {

@@ -4,15 +4,12 @@ const router = express.Router();
 
 const beerModel = require('../models');
 
-const moment = require('moment');
-
 router.get('/', (req, res, next) => {
   const breweryList = req.session.breweryList ? req.session.breweryList : null;
   const lastId = req.session.lastId ? req.session.lastId : null;
   res.render('form', {
     title: 'Brewtopia 🍺',
     subTitle: 'Add Beer',
-    moment,
     breweryList,
     lastId,
   });
