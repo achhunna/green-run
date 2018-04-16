@@ -17,10 +17,10 @@ router.get('/', (req, res, next) => {
 
 router.post('/', (req, res, next) => {
   const beer = {
-    id: parseInt(req.body.id),
+    id: parseInt(req.body.id, 10),
     name: req.body.name,
     activelyBrewed: req.body.activelyBrewed,
-    ibu: parseInt(req.body.ibu),
+    ibu: parseInt(req.body.ibu, 10),
     abv: Number(req.body.abv),
     flavors: req.body.flavors,
     lastTappedOn: req.body.lastTappedOn,

@@ -7,17 +7,16 @@
     <%- include('partials/header-nav.ejs', {title}) %>
     <div class="container">
       <div class="main-container">
-        <h4><%= subTitle %></h4>
+        <h4 class="blurb"><%= subTitle %></h4>
         <% if (message !== null) { %>
           <div class="alert alert-success" id="alertBox" role="alert">
             <%= message %>
           </div>
         <% } %>
-        <div class="col-lg-12">
+        <div>
           <div class="input-group">
-            <input type="text" class="form-control" id="searchBox" placeholder="Search beer...">
-            <label class="control-label" for="parameterValue">&nbsp;</label>
-            <button type="button" class="btn btn-primary" onClick="requestUrl('/add')">add</button>
+            <button type="button" class="btn btn-primary" onClick="requestUrl('/add')"><i class="fas fa-plus"></i> add</button>
+            <input type="text" class="form-control" id="searchBox" placeholder="Search beer"><i class="fas fa-search" id="searchIcon"></i>
           </div>
         </div>
         <div class="beer-list">
@@ -32,17 +31,18 @@
                 <div class="flex-item center">
                   <div class="name"><%= beer.name %></div>
                   <div class="breweryName"><%= beer.breweryName %></div>
-                  <div class="info flavors">Flavors: <%= beer.flavors %></div>
                   <div class="info lastTappedOn">Last tapped on <%= beer.lastTappedOn %></div>
+                  <div class="info activelyBrewed"><%= beer.activelyBrewed ? 'Actively brewed' : 'Not Actively brewed' %></div>
                 </div>
                 <div class="flex-item info right">
                   <div class="ibu">IBU <%= beer.ibu %></div>
                   <div class="abv">ABV <%= beer.abv %></div>
+                  <div class="info flavors">Flavors: <%= beer.flavors %></div>
                 </div>
               </div>
               <div class="buttons-container">
-                <button type="button" class="btn btn-success" onClick="requestUrl('/edit/<%= beer.id %>')">edit</button>
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDelete" data-id="<%= beer.id %>">delete</button>
+                <button type="button" class="btn btn-success" onClick="requestUrl('/edit/<%= beer.id %>')"><i class="fas fa-edit"></i> edit</button>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDelete" data-id="<%= beer.id %>"><i class="fas fa-trash-alt"></i> delete</button>
               </div>
             </div>
           <% }) %>

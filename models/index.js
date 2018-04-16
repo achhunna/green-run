@@ -38,7 +38,7 @@ exports.delete = function (id, cb) {
     const jsonBeers = JSON.stringify(parsedData, null, 2);
     fs.writeFile(beerPath, jsonBeers, 'utf8', (error) => {
       if (error) throw error;
-      cb(null, `Successfully deleted ${deletedBeer.name} from ${deletedBeer.breweryName} with an ID of ${deletedBeer.id}`);
+      cb(null, 'Successfully deleted');
     });
   });
 };
@@ -57,7 +57,7 @@ exports.edit = function (id, beerData, cb) {
     const jsonBeers = JSON.stringify(parsedData, null, 2);
     fs.writeFile(beerPath, jsonBeers, 'utf8', (error) => {
       if (error) throw error;
-      cb(null, `Successfully updated ${parsedData.value[beerIndex].name} with ${JSON.stringify(beerData)}`);
+      cb(null, 'Successfully updated');
     });
   });
 };
