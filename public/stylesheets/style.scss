@@ -1,9 +1,49 @@
 /* THESE ARE MAPPED SEE: ./style.css.map */
+$light-grey: #aaa;
+$super-light-grey: #eee;
+$break-small: 991px;
 
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+  @media screen and (max-width: $break-small) {
+    padding: 15px;
+  }
 }
+
 a {
   color: #00B7FF;
+}
+
+.nav-header {
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+.main-container,
+.beer-form {
+  max-width: 700px;
+  margin: auto;
+  padding: 50px;
+
+  @media screen and (max-width: $break-small) {
+    padding: 20px;
+    max-width: auto;
+  }
+}
+
+.beer-form {
+  border: 2px solid $super-light-grey;
+}
+
+.beer-container {
+  border: 1px solid $light-grey;
+  padding: 10px;
+}
+
+.form-header {
+  margin-bottom: 40px;
+  text-align: center;
+  color: $light-grey;
 }

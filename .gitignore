@@ -31,3 +31,7 @@ jspm_packages/
 .env
 
 .next
+
+# Transpiled CSS
+public/stylesheets/style.css
+public/stylesheets/style.css.map

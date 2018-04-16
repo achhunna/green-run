@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('partials/header.ejs', {title}) %>
+  </head>
+  <body>
+    <%- include('partials/header-nav.ejs', {title, subTitle}) %>
+    <div class="container">
+      <div class="beer-form">
+        <h4 class="form-header"><%= subTitle %></h4>
+        <% const singleBeer = typeof beer != 'undefined' ? JSON.parse(beer) : null %>
+        <form method="POST" action="/add">
+          <input type="hidden" name="id" value="<%= singleBeer ? singleBeer.id : lastId %>">
+          <div class="form-group row">
+            <label class="col-2 col-form-label">Name</label>
+            <div class="col-10">
+              <input class="form-control" type="text" placeholder="Beer Name" id="name" name="name" value="<%= singleBeer ? singleBeer.name : '' %>">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="activelyBrewed">Actively Brewed</label>
+            <select class="form-control" id="activelyBrewed" name="activelyBrewed">
+              <option value="true">Yes</option>
+              <option value="false" <%= singleBeer && singleBeer.activelyBrewed !== "true" ? "selected" : "" %>>No</option>
+            </select>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-2 col-form-label">IBU</label>
+            <div class="col-10">
+              <input class="form-control" type="text" placeholder="Beer IBU" id="ibu" name="ibu" value="<%= singleBeer ? singleBeer.ibu : '' %>">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-2 col-form-label">ABV</label>
+            <div class="col-10">
+              <input class="form-control" type="text" placeholder="Beer ABV" id="anv" name="abv" value="<%= singleBeer ? singleBeer.abv : '' %>">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-2 col-form-label">Flavors</label>
+            <div class="col-10">
+              <input class="form-control" type="text" placeholder="Beer Flavors, comma separated" id="flavors" name="flavors" value="<%= singleBeer ? singleBeer.flavors : '' %>">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-4 col-form-label">Last Tapped On</label>
+            <div class="col-8">
+              <input class="form-control" type="date" placeholder="Last Tapped Date" id="lastTappedOn" name="lastTappedOn" value="<%= singleBeer ? moment(singleBeer.lastTappedOn).format('YYYY-MM-DD') : '' %>">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="breweryName">Brewerey Name</label>
+            <select class="form-control" id="breweryName" name="breweryId">
+              <% if (breweryList) {
+                  for (k in breweryList) { %>
+                    <option value="<%= k %>" <%= singleBeer && singleBeer.breweryId === k ? "selected" : "" %>><%= breweryList[k] %></option>
+                  <% }
+              } %>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary"><%= singleBeer ? 'Update' : 'Submit' %></button>
+          <button type="button" class="btn btn-secondary" onClick="requestUrl('/')">Cancel</button>
+        </form>
+      </div>
+    </div>
+    <%- include('partials/footer.ejs') %>
+  </body>
+</html>
