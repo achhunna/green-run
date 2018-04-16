@@ -15,15 +15,15 @@
         <% } %>
         <div class="col-lg-12">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search beer...">
+            <input type="text" class="form-control" id="searchBox" placeholder="Search beer...">
             <label class="control-label" for="parameterValue">&nbsp;</label>
             <button type="button" class="btn btn-primary" onClick="requestUrl('/add')">add</button>
           </div>
         </div>
         <% JSON.parse(beers).value.map((beer) => { %>
           <div class="beer-container">
-            <div><%= beer.name %></div>
-            <div><%= beer.breweryName %></div>
+            <div class="name"><%= beer.name %></div>
+            <div class="breweryName"><%= beer.breweryName %></div>
             <button type="button" class="btn btn-success" onClick="requestUrl('/edit/<%= beer.id %>')">edit</button>
             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDelete" data-id="<%= beer.id %>">delete</button>
           </div>
