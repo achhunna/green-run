@@ -9,7 +9,7 @@
       <div class="main-container">
         <h4><%= subTitle %></h4>
         <% if (message !== null) { %>
-          <div class="alert alert-success" role="alert">
+          <div class="alert alert-success" id="alertBox" role="alert">
             <%= message %>
           </div>
         <% } %>
@@ -20,14 +20,24 @@
             <button type="button" class="btn btn-primary" onClick="requestUrl('/add')">add</button>
           </div>
         </div>
-        <% JSON.parse(beers).value.map((beer) => { %>
-          <div class="beer-container">
-            <div class="name"><%= beer.name %></div>
-            <div class="breweryName"><%= beer.breweryName %></div>
-            <button type="button" class="btn btn-success" onClick="requestUrl('/edit/<%= beer.id %>')">edit</button>
-            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDelete" data-id="<%= beer.id %>">delete</button>
-          </div>
-        <% }) %>
+        <div class="beer-list">
+          <% JSON.parse(beers).value.map((beer) => { %>
+            <div class="beer-container">
+              <div>
+                <div class="name"><%= beer.name %></div>
+                <div class="breweryName"><%= beer.breweryName %></div>
+                <div class="info flavors">Flavors: <%= beer.flavors %></div>
+                <button type="button" class="btn btn-success" onClick="requestUrl('/edit/<%= beer.id %>')">edit</button>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDelete" data-id="<%= beer.id %>">delete</button>
+              </div>
+              <div class="info right">
+                <div class="ibu">IBU <%= beer.ibu %></div>
+                <div class="abv">ABV <%= beer.abv %></div>
+                <div class="lastTappedOn">Last tapped on <%= beer.lastTappedOn %></div>
+              </div>
+            </div>
+          <% }) %>
+        </div>
       </div>
     </div>
     <%- include('partials/delete-modal.ejs') %>

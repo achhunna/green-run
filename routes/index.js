@@ -11,6 +11,7 @@ const beerModel = require('../models');
 // However be careful, they are brittle and might need some upkeep.
 router.get('/', (req, res, next) => {
   const message = req.session.message ? req.session.message : null;
+  delete req.session.message;
   beerModel.all((err, beers) => {
     const beersObj = JSON.parse(beers).value;
     let lastId = 0;

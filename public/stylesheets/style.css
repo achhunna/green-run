@@ -24,12 +24,37 @@ a {
       padding: 20px;
       max-width: auto; } }
 
+#alertBox {
+  position: fixed;
+  z-index: 100;
+  opacity: 0;
+  left: 50%;
+  top: 75px;
+  transform: translate(-50%, 0%);
+  animation: fadeinout 3s linear forwards; }
+
+@keyframes fadeinout {
+  50% {
+    opacity: 1; } }
+
 .beer-form {
   border: 2px solid #eee; }
 
+.beer-list {
+  margin-top: 20px; }
+
 .beer-container {
   border: 1px solid #aaa;
-  padding: 10px; }
+  padding: 10px;
+  display: flex;
+  justify-content: space-between; }
+  .beer-container .name {
+    font-weight: bold;
+    font-size: 20px; }
+  .beer-container .info {
+    font-size: 12px; }
+    .beer-container .info.right {
+      text-align: right; }
 
 .form-header {
   margin-bottom: 40px;
