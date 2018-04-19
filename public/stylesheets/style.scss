@@ -28,6 +28,15 @@ a {
    h1 {
      font-weight: bold;
      color: $super-light-grey;
+
+     a {
+       color: $super-light-grey;
+     }
+
+     a:hover {
+       text-decoration: none;
+       color: $light-grey;
+     }
    }
 }
 
@@ -65,6 +74,10 @@ a {
 
 #searchBox {
   margin-left: 100px;
+
+  @media screen and (max-width: $break-small) {
+    margin-left: 25px;
+  }
 }
 
 #searchIcon {

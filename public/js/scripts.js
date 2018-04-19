@@ -9,6 +9,9 @@ $(document).ready(function () {
       id = $(this).data('id');
     }
     $('#id').val(id);
+    if (typeof $(this).data('name') !== 'undefined') {
+      $('#beerName').html($(this).data('name'));
+    }
   });
 
   $('#searchBox').keyup(function () {

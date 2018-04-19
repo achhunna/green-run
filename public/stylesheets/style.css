@@ -17,6 +17,11 @@ a {
   .nav-header h1 {
     font-weight: bold;
     color: #ddd; }
+    .nav-header h1 a {
+      color: #ddd; }
+    .nav-header h1 a:hover {
+      text-decoration: none;
+      color: #aaa; }
 
 .main-container,
 .beer-form {
@@ -49,6 +54,9 @@ a {
 
 #searchBox {
   margin-left: 100px; }
+  @media screen and (max-width: 991px) {
+    #searchBox {
+      margin-left: 25px; } }
 
 #searchIcon {
   position: absolute;

@@ -32,7 +32,7 @@
                   <div class="name"><%= beer.name %></div>
                   <div class="breweryName"><%= beer.breweryName %></div>
                   <div class="info lastTappedOn">Last tapped on <%= beer.lastTappedOn %></div>
-                  <div class="info activelyBrewed"><%= beer.activelyBrewed ? 'Actively brewed' : 'Not Actively brewed' %></div>
+                  <div class="info activelyBrewed"><%= beer.activelyBrewed === 'true' ? 'Actively brewed' : 'Not Actively brewed' %></div>
                 </div>
                 <div class="flex-item info right">
                   <div class="ibu">IBU <%= beer.ibu %></div>
@@ -42,7 +42,7 @@
               </div>
               <div class="buttons-container">
                 <button type="button" class="btn btn-success" onClick="requestUrl('/edit/<%= beer.id %>')"><i class="fas fa-edit"></i> edit</button>
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDelete" data-id="<%= beer.id %>"><i class="fas fa-trash-alt"></i> delete</button>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDelete" data-id="<%= beer.id %>" data-name="<%= beer.name %>"><i class="fas fa-trash-alt"></i> delete</button>
               </div>
             </div>
           <% }) %>

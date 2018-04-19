@@ -14,7 +14,7 @@
           <div class="form-group row">
             <label class="col-2 col-form-label">Name</label>
             <div class="col-10">
-              <input class="form-control" type="text" placeholder="Beer Name" id="name" name="name" value="<%= singleBeer ? singleBeer.name : '' %>">
+              <input class="form-control" type="text" placeholder="Beer Name" id="name" name="name" value="<%= singleBeer ? singleBeer.name : '' %>" required>
             </div>
           </div>
 
@@ -29,28 +29,28 @@
           <div class="form-group row">
             <label class="col-2 col-form-label">IBU</label>
             <div class="col-10">
-              <input class="form-control" type="text" placeholder="Beer IBU" id="ibu" name="ibu" value="<%= singleBeer ? singleBeer.ibu : '' %>">
+              <input class="form-control" type="text" placeholder="Beer IBU" id="ibu" name="ibu" value="<%= singleBeer ? singleBeer.ibu : '' %>" required>
             </div>
           </div>
 
           <div class="form-group row">
             <label class="col-2 col-form-label">ABV</label>
             <div class="col-10">
-              <input class="form-control" type="text" placeholder="Beer ABV" id="anv" name="abv" value="<%= singleBeer ? singleBeer.abv : '' %>">
+              <input class="form-control" type="text" placeholder="Beer ABV" id="anv" name="abv" value="<%= singleBeer ? singleBeer.abv : '' %>" required>
             </div>
           </div>
 
           <div class="form-group row">
             <label class="col-2 col-form-label">Flavors</label>
             <div class="col-10">
-              <input class="form-control" type="text" placeholder="Beer Flavors, comma separated" id="flavors" name="flavors" value="<%= singleBeer ? singleBeer.flavors : '' %>">
+              <input class="form-control" type="text" placeholder="Beer Flavors, comma separated" id="flavors" name="flavors" value="<%= singleBeer ? singleBeer.flavors : '' %>" required>
             </div>
           </div>
 
           <div class="form-group row">
             <label class="col-4 col-form-label">Last Tapped On</label>
             <div class="col-8">
-              <input class="form-control" type="text" placeholder="mm/dd/yyyy" id="lastTappedOn" name="lastTappedOn" value="<%= singleBeer ? singleBeer.lastTappedOn : '' %>">
+              <input class="form-control" type="text" placeholder="mm/dd/yyyy" id="lastTappedOn" name="lastTappedOn" value="<%= singleBeer ? singleBeer.lastTappedOn : '' %>" required>
             </div>
           </div>
 
