@@ -25,7 +25,7 @@ router.get('/', (req, res, next) => {
     res.render('index', {
       beers,
       title: 'Brewtopia 🍺',
-      subTitle: 'Seller of the finest beers.',
+      subTitle: 'Seller of the finest beers',
       message,
     });
   });

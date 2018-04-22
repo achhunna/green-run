@@ -41,7 +41,7 @@
                 </div>
               </div>
               <div class="buttons-container">
-                <button type="button" class="btn btn-success" onClick="requestUrl('/edit/<%= beer.id %>')"><i class="fas fa-edit"></i> edit</button>
+                <button type="button" class="btn btn-success edit-button" data-id="<%= beer.id %>"><i class="fas fa-edit"></i> edit</button>
                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDelete" data-id="<%= beer.id %>" data-name="<%= beer.name %>"><i class="fas fa-trash-alt"></i> delete</button>
               </div>
             </div>

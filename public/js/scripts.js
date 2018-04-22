@@ -24,4 +24,8 @@ $(document).ready(function () {
       }
     });
   });
+
+  $('.beer-container').click(function () {
+    requestUrl(`edit/${$(this).find('.edit-button').data('id')}`);
+  });
 });
