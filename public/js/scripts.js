@@ -25,7 +25,9 @@ $(document).ready(function () {
     });
   });
 
-  $('.beer-container').click(function () {
-    requestUrl(`edit/${$(this).find('.edit-button').data('id')}`);
+  $('.beer-container').click(function (e) {
+    if (e.target.classList.contains('edit-button')) {
+      requestUrl(`edit/${$(this).find('.edit-button').data('id')}`);
+    }
   });
 });
